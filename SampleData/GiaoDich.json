@@ -1,0 +1,1240 @@
+[
+    {
+        "_id": "GD001",
+        "MaKhachHang": "KH007",
+        "NgayGiaoDich": "2026-01-16",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2300000,
+        "DiemNhan": 230,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            },
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 2,
+                "DonGia": 800000,
+                "ThanhTien": 1600000
+            }
+        ]
+    },
+    {
+        "_id": "GD002",
+        "MaKhachHang": "KH014",
+        "NgayGiaoDich": "2026-01-27",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2000000,
+        "DiemNhan": 200,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 3,
+                "DonGia": 450000,
+                "ThanhTien": 1350000
+            },
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 1,
+                "DonGia": 650000,
+                "ThanhTien": 650000
+            }
+        ]
+    },
+    {
+        "_id": "GD003",
+        "MaKhachHang": "KH001",
+        "NgayGiaoDich": "2026-02-07",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 550000,
+        "DiemNhan": 55,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 1,
+                "DonGia": 550000,
+                "ThanhTien": 550000
+            }
+        ]
+    },
+    {
+        "_id": "GD004",
+        "MaKhachHang": "KH008",
+        "NgayGiaoDich": "2026-02-18",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3000000,
+        "DiemNhan": 300,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 2,
+                "DonGia": 900000,
+                "ThanhTien": 1800000
+            },
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD005",
+        "MaKhachHang": "KH015",
+        "NgayGiaoDich": "2026-03-01",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3900000,
+        "DiemNhan": 390,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 3,
+                "DonGia": 800000,
+                "ThanhTien": 2400000
+            },
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 2,
+                "DonGia": 750000,
+                "ThanhTien": 1500000
+            }
+        ]
+    },
+    {
+        "_id": "GD006",
+        "MaKhachHang": "KH002",
+        "NgayGiaoDich": "2026-03-12",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 650000,
+        "DiemNhan": 65,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 1,
+                "DonGia": 650000,
+                "ThanhTien": 650000
+            }
+        ]
+    },
+    {
+        "_id": "GD007",
+        "MaKhachHang": "KH009",
+        "NgayGiaoDich": "2026-03-23",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1300000,
+        "DiemNhan": 130,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 2,
+                "DonGia": 300000,
+                "ThanhTien": 600000
+            },
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            }
+        ]
+    },
+    {
+        "_id": "GD008",
+        "MaKhachHang": "KH016",
+        "NgayGiaoDich": "2026-04-03",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 4050000,
+        "DiemNhan": 405,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 3,
+                "DonGia": 1200000,
+                "ThanhTien": 3600000
+            },
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 1,
+                "DonGia": 450000,
+                "ThanhTien": 450000
+            }
+        ]
+    },
+    {
+        "_id": "GD009",
+        "MaKhachHang": "KH003",
+        "NgayGiaoDich": "2026-04-14",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 750000,
+        "DiemNhan": 75,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 1,
+                "DonGia": 750000,
+                "ThanhTien": 750000
+            }
+        ]
+    },
+    {
+        "_id": "GD010",
+        "MaKhachHang": "KH010",
+        "NgayGiaoDich": "2026-04-25",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1900000,
+        "DiemNhan": 190,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 2,
+                "DonGia": 500000,
+                "ThanhTien": 1000000
+            },
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 1,
+                "DonGia": 900000,
+                "ThanhTien": 900000
+            }
+        ]
+    },
+    {
+        "_id": "GD011",
+        "MaKhachHang": "KH017",
+        "NgayGiaoDich": "2026-05-06",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2650000,
+        "DiemNhan": 265,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 3,
+                "DonGia": 350000,
+                "ThanhTien": 1050000
+            },
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 2,
+                "DonGia": 800000,
+                "ThanhTien": 1600000
+            }
+        ]
+    },
+    {
+        "_id": "GD012",
+        "MaKhachHang": "KH004",
+        "NgayGiaoDich": "2026-05-17",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 450000,
+        "DiemNhan": 45,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 1,
+                "DonGia": 450000,
+                "ThanhTien": 450000
+            }
+        ]
+    },
+    {
+        "_id": "GD013",
+        "MaKhachHang": "KH011",
+        "NgayGiaoDich": "2026-05-28",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1700000,
+        "DiemNhan": 170,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 2,
+                "DonGia": 550000,
+                "ThanhTien": 1100000
+            },
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 2,
+                "DonGia": 300000,
+                "ThanhTien": 600000
+            }
+        ]
+    },
+    {
+        "_id": "GD014",
+        "MaKhachHang": "KH018",
+        "NgayGiaoDich": "2026-06-08",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3900000,
+        "DiemNhan": 390,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 3,
+                "DonGia": 900000,
+                "ThanhTien": 2700000
+            },
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD015",
+        "MaKhachHang": "KH005",
+        "NgayGiaoDich": "2026-06-19",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 800000,
+        "DiemNhan": 80,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 1,
+                "DonGia": 800000,
+                "ThanhTien": 800000
+            }
+        ]
+    },
+    {
+        "_id": "GD016",
+        "MaKhachHang": "KH012",
+        "NgayGiaoDich": "2026-06-30",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1800000,
+        "DiemNhan": 180,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 2,
+                "DonGia": 650000,
+                "ThanhTien": 1300000
+            },
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 1,
+                "DonGia": 500000,
+                "ThanhTien": 500000
+            }
+        ]
+    },
+    {
+        "_id": "GD017",
+        "MaKhachHang": "KH019",
+        "NgayGiaoDich": "2026-07-11",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1600000,
+        "DiemNhan": 160,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 3,
+                "DonGia": 300000,
+                "ThanhTien": 900000
+            },
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            }
+        ]
+    },
+    {
+        "_id": "GD018",
+        "MaKhachHang": "KH006",
+        "NgayGiaoDich": "2026-07-22",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1200000,
+        "DiemNhan": 120,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD019",
+        "MaKhachHang": "KH013",
+        "NgayGiaoDich": "2026-08-02",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2600000,
+        "DiemNhan": 260,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 2,
+                "DonGia": 750000,
+                "ThanhTien": 1500000
+            },
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 2,
+                "DonGia": 550000,
+                "ThanhTien": 1100000
+            }
+        ]
+    },
+    {
+        "_id": "GD020",
+        "MaKhachHang": "KH020",
+        "NgayGiaoDich": "2026-08-13",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2400000,
+        "DiemNhan": 240,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 3,
+                "DonGia": 500000,
+                "ThanhTien": 1500000
+            },
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 1,
+                "DonGia": 900000,
+                "ThanhTien": 900000
+            }
+        ]
+    },
+    {
+        "_id": "GD021",
+        "MaKhachHang": "KH007",
+        "NgayGiaoDich": "2026-08-24",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 350000,
+        "DiemNhan": 35,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 1,
+                "DonGia": 350000,
+                "ThanhTien": 350000
+            }
+        ]
+    },
+    {
+        "_id": "GD022",
+        "MaKhachHang": "KH014",
+        "NgayGiaoDich": "2026-01-09",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1550000,
+        "DiemNhan": 155,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 2,
+                "DonGia": 450000,
+                "ThanhTien": 900000
+            },
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 1,
+                "DonGia": 650000,
+                "ThanhTien": 650000
+            }
+        ]
+    },
+    {
+        "_id": "GD023",
+        "MaKhachHang": "KH001",
+        "NgayGiaoDich": "2026-01-20",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2250000,
+        "DiemNhan": 225,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 3,
+                "DonGia": 550000,
+                "ThanhTien": 1650000
+            },
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 2,
+                "DonGia": 300000,
+                "ThanhTien": 600000
+            }
+        ]
+    },
+    {
+        "_id": "GD024",
+        "MaKhachHang": "KH008",
+        "NgayGiaoDich": "2026-01-31",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 900000,
+        "DiemNhan": 90,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 1,
+                "DonGia": 900000,
+                "ThanhTien": 900000
+            }
+        ]
+    },
+    {
+        "_id": "GD025",
+        "MaKhachHang": "KH015",
+        "NgayGiaoDich": "2026-02-11",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3100000,
+        "DiemNhan": 310,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 2,
+                "DonGia": 800000,
+                "ThanhTien": 1600000
+            },
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 2,
+                "DonGia": 750000,
+                "ThanhTien": 1500000
+            }
+        ]
+    },
+    {
+        "_id": "GD026",
+        "MaKhachHang": "KH002",
+        "NgayGiaoDich": "2026-02-22",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2450000,
+        "DiemNhan": 245,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 3,
+                "DonGia": 650000,
+                "ThanhTien": 1950000
+            },
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 1,
+                "DonGia": 500000,
+                "ThanhTien": 500000
+            }
+        ]
+    },
+    {
+        "_id": "GD027",
+        "MaKhachHang": "KH009",
+        "NgayGiaoDich": "2026-03-05",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 300000,
+        "DiemNhan": 30,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 1,
+                "DonGia": 300000,
+                "ThanhTien": 300000
+            }
+        ]
+    },
+    {
+        "_id": "GD028",
+        "MaKhachHang": "KH016",
+        "NgayGiaoDich": "2026-03-16",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2850000,
+        "DiemNhan": 285,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 2,
+                "DonGia": 1200000,
+                "ThanhTien": 2400000
+            },
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 1,
+                "DonGia": 450000,
+                "ThanhTien": 450000
+            }
+        ]
+    },
+    {
+        "_id": "GD029",
+        "MaKhachHang": "KH003",
+        "NgayGiaoDich": "2026-03-27",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3350000,
+        "DiemNhan": 335,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 3,
+                "DonGia": 750000,
+                "ThanhTien": 2250000
+            },
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 2,
+                "DonGia": 550000,
+                "ThanhTien": 1100000
+            }
+        ]
+    },
+    {
+        "_id": "GD030",
+        "MaKhachHang": "KH010",
+        "NgayGiaoDich": "2026-04-07",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 500000,
+        "DiemNhan": 50,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 1,
+                "DonGia": 500000,
+                "ThanhTien": 500000
+            }
+        ]
+    },
+    {
+        "_id": "GD031",
+        "MaKhachHang": "KH017",
+        "NgayGiaoDich": "2026-04-18",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2300000,
+        "DiemNhan": 230,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            },
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 2,
+                "DonGia": 800000,
+                "ThanhTien": 1600000
+            }
+        ]
+    },
+    {
+        "_id": "GD032",
+        "MaKhachHang": "KH004",
+        "NgayGiaoDich": "2026-04-29",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2000000,
+        "DiemNhan": 200,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 3,
+                "DonGia": 450000,
+                "ThanhTien": 1350000
+            },
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 1,
+                "DonGia": 650000,
+                "ThanhTien": 650000
+            }
+        ]
+    },
+    {
+        "_id": "GD033",
+        "MaKhachHang": "KH011",
+        "NgayGiaoDich": "2026-05-10",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 550000,
+        "DiemNhan": 55,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 1,
+                "DonGia": 550000,
+                "ThanhTien": 550000
+            }
+        ]
+    },
+    {
+        "_id": "GD034",
+        "MaKhachHang": "KH018",
+        "NgayGiaoDich": "2026-05-21",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3000000,
+        "DiemNhan": 300,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 2,
+                "DonGia": 900000,
+                "ThanhTien": 1800000
+            },
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD035",
+        "MaKhachHang": "KH005",
+        "NgayGiaoDich": "2026-06-01",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3900000,
+        "DiemNhan": 390,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 3,
+                "DonGia": 800000,
+                "ThanhTien": 2400000
+            },
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 2,
+                "DonGia": 750000,
+                "ThanhTien": 1500000
+            }
+        ]
+    },
+    {
+        "_id": "GD036",
+        "MaKhachHang": "KH012",
+        "NgayGiaoDich": "2026-06-12",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 650000,
+        "DiemNhan": 65,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 1,
+                "DonGia": 650000,
+                "ThanhTien": 650000
+            }
+        ]
+    },
+    {
+        "_id": "GD037",
+        "MaKhachHang": "KH019",
+        "NgayGiaoDich": "2026-06-23",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1300000,
+        "DiemNhan": 130,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 2,
+                "DonGia": 300000,
+                "ThanhTien": 600000
+            },
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            }
+        ]
+    },
+    {
+        "_id": "GD038",
+        "MaKhachHang": "KH006",
+        "NgayGiaoDich": "2026-07-04",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 4050000,
+        "DiemNhan": 405,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 3,
+                "DonGia": 1200000,
+                "ThanhTien": 3600000
+            },
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 1,
+                "DonGia": 450000,
+                "ThanhTien": 450000
+            }
+        ]
+    },
+    {
+        "_id": "GD039",
+        "MaKhachHang": "KH013",
+        "NgayGiaoDich": "2026-07-15",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 750000,
+        "DiemNhan": 75,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 1,
+                "DonGia": 750000,
+                "ThanhTien": 750000
+            }
+        ]
+    },
+    {
+        "_id": "GD040",
+        "MaKhachHang": "KH020",
+        "NgayGiaoDich": "2026-07-26",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1900000,
+        "DiemNhan": 190,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 2,
+                "DonGia": 500000,
+                "ThanhTien": 1000000
+            },
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 1,
+                "DonGia": 900000,
+                "ThanhTien": 900000
+            }
+        ]
+    },
+    {
+        "_id": "GD041",
+        "MaKhachHang": "KH007",
+        "NgayGiaoDich": "2026-08-06",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2650000,
+        "DiemNhan": 265,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 3,
+                "DonGia": 350000,
+                "ThanhTien": 1050000
+            },
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 2,
+                "DonGia": 800000,
+                "ThanhTien": 1600000
+            }
+        ]
+    },
+    {
+        "_id": "GD042",
+        "MaKhachHang": "KH014",
+        "NgayGiaoDich": "2026-08-17",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 450000,
+        "DiemNhan": 45,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP002",
+                "TenSanPham": "Áo sơ mi",
+                "SoLuong": 1,
+                "DonGia": 450000,
+                "ThanhTien": 450000
+            }
+        ]
+    },
+    {
+        "_id": "GD043",
+        "MaKhachHang": "KH001",
+        "NgayGiaoDich": "2026-08-28",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1700000,
+        "DiemNhan": 170,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 2,
+                "DonGia": 550000,
+                "ThanhTien": 1100000
+            },
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 2,
+                "DonGia": 300000,
+                "ThanhTien": 600000
+            }
+        ]
+    },
+    {
+        "_id": "GD044",
+        "MaKhachHang": "KH008",
+        "NgayGiaoDich": "2026-01-13",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 3900000,
+        "DiemNhan": 390,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 3,
+                "DonGia": 900000,
+                "ThanhTien": 2700000
+            },
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD045",
+        "MaKhachHang": "KH015",
+        "NgayGiaoDich": "2026-01-24",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 800000,
+        "DiemNhan": 80,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP005",
+                "TenSanPham": "Quần jean",
+                "SoLuong": 1,
+                "DonGia": 800000,
+                "ThanhTien": 800000
+            }
+        ]
+    },
+    {
+        "_id": "GD046",
+        "MaKhachHang": "KH002",
+        "NgayGiaoDich": "2026-02-04",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1800000,
+        "DiemNhan": 180,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP006",
+                "TenSanPham": "Túi xách",
+                "SoLuong": 2,
+                "DonGia": 650000,
+                "ThanhTien": 1300000
+            },
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 1,
+                "DonGia": 500000,
+                "ThanhTien": 500000
+            }
+        ]
+    },
+    {
+        "_id": "GD047",
+        "MaKhachHang": "KH009",
+        "NgayGiaoDich": "2026-02-15",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1600000,
+        "DiemNhan": 160,
+        "PhuongThucThanhToan": "ViDienTu",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP007",
+                "TenSanPham": "Ví da",
+                "SoLuong": 3,
+                "DonGia": 300000,
+                "ThanhTien": 900000
+            },
+            {
+                "MaSanPham": "SP001",
+                "TenSanPham": "Áo thun nam",
+                "SoLuong": 2,
+                "DonGia": 350000,
+                "ThanhTien": 700000
+            }
+        ]
+    },
+    {
+        "_id": "GD048",
+        "MaKhachHang": "KH016",
+        "NgayGiaoDich": "2026-02-26",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 1200000,
+        "DiemNhan": 120,
+        "PhuongThucThanhToan": "TienMat",
+        "ChiNhanh": "CN01",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP008",
+                "TenSanPham": "Nước hoa",
+                "SoLuong": 1,
+                "DonGia": 1200000,
+                "ThanhTien": 1200000
+            }
+        ]
+    },
+    {
+        "_id": "GD049",
+        "MaKhachHang": "KH003",
+        "NgayGiaoDich": "2026-03-09",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2600000,
+        "DiemNhan": 260,
+        "PhuongThucThanhToan": "ChuyenKhoan",
+        "ChiNhanh": "CN02",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP009",
+                "TenSanPham": "Tai nghe Bluetooth",
+                "SoLuong": 2,
+                "DonGia": 750000,
+                "ThanhTien": 1500000
+            },
+            {
+                "MaSanPham": "SP003",
+                "TenSanPham": "Quần kaki",
+                "SoLuong": 2,
+                "DonGia": 550000,
+                "ThanhTien": 1100000
+            }
+        ]
+    },
+    {
+        "_id": "GD050",
+        "MaKhachHang": "KH010",
+        "NgayGiaoDich": "2026-03-20",
+        "LoaiGiaoDich": "MuaHang",
+        "TongTien": 2400000,
+        "DiemNhan": 240,
+        "PhuongThucThanhToan": "TheNganHang",
+        "ChiNhanh": "CN03",
+        "TrangThai": "HoanTat",
+        "SanPham": [
+            {
+                "MaSanPham": "SP010",
+                "TenSanPham": "Balo thời trang",
+                "SoLuong": 3,
+                "DonGia": 500000,
+                "ThanhTien": 1500000
+            },
+            {
+                "MaSanPham": "SP004",
+                "TenSanPham": "Giày thể thao",
+                "SoLuong": 1,
+                "DonGia": 900000,
+                "ThanhTien": 900000
+            }
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<%
+  function sortUrl(field) {
+    var params = new URLSearchParams();
+    if (maKhachHang) params.set('maKhachHang', maKhachHang);
+    var newOrder = (sortField === field && sortOrder === 1) ? 'desc' : 'asc';
+    params.set('sort', field);
+    params.set('order', newOrder);
+    return '?' + params.toString();
+  }
+  function arrow(field) {
+    return sortField === field ? '<span class="sort-arrow">' + (sortOrder === 1 ? '&#9650;' : '&#9660;') + '</span>' : '';
+  }
+%>
+
+<div class="page-header">
+  <div>
+    <h1>Lịch sử &amp; Đổi ưu đãi</h1>
+    <p style="margin:4px 0 0; color:var(--text-muted); font-size:13px;">Ghi nhận các lượt đổi voucher, kiểm tra điều kiện điểm khả dụng và hỗ trợ hoàn tác</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="toolbar">
+    <form method="GET" action="/su-dung-uu-dai">
+      <select name="maKhachHang" style="min-width:240px;">
+        <option value="">-- Tất cả khách hàng --</option>
+        <% dsKhachHang.forEach(function(kh) { %>
+          <option value="<%= kh._id %>" <%= maKhachHang === kh._id ? 'selected' : '' %>><%= kh._id %> - <%= kh.HoTen %></option>
+        <% }) %>
+      </select>
+      <button type="submit" class="btn btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        <span>Lọc</span>
+      </button>
+      <% if (maKhachHang) { %>
+        <a href="/su-dung-uu-dai" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>Bỏ lọc</span>
+        </a>
+      <% } %>
+    </form>
+    <div style="font-size:13px; color:var(--text-muted); font-weight:600;">
+      Số lượt đổi: <strong style="color:var(--text-main);"><%= danhSach.length %></strong>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th><a href="<%= sortUrl('_id') %>">Mã <%- arrow('_id') %></a></th>
+          <th><a href="<%= sortUrl('MaKhachHang') %>">Khách hàng <%- arrow('MaKhachHang') %></a></th>
+          <th><a href="<%= sortUrl('MaUuDai') %>">Ưu đãi quy đổi <%- arrow('MaUuDai') %></a></th>
+          <th>Giao dịch liên kết</th>
+          <th style="text-align:right;"><a href="<%= sortUrl('DiemDaDoi') %>">Điểm khấu trừ <%- arrow('DiemDaDoi') %></a></th>
+          <th>Ngày quy đổi</th>
+          <th><a href="<%= sortUrl('TrangThai') %>">Trạng thái <%- arrow('TrangThai') %></a></th>
+          <th style="text-align:center;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (danhSach.length === 0) { %>
+          <tr class="empty-row"><td colspan="8">Chưa có lượt sử dụng ưu đãi nào.</td></tr>
+        <% } %>
+        <% danhSach.forEach(function(sd) { %>
+          <tr>
+            <td><strong style="color:var(--primary-700);"><%= sd._id %></strong></td>
+            <td><span class="badge badge-gray"><%= sd.MaKhachHang %></span></td>
+            <td><strong><%= sd.MaUuDai %></strong></td>
+            <td><%= sd.MaGiaoDich || '-' %></td>
+            <td class="num" style="color:var(--danger-text); font-weight:700;">-<%= sd.DiemDaDoi %> pts</td>
+            <td><%= sd.NgaySuDung %></td>
+            <td>
+              <% if (sd.TrangThai === 'DaSuDung') { %>
+                <span class="badge badge-success"><span class="badge-dot"></span> Đã áp dụng</span>
+              <% } else { %>
+                <span class="badge badge-gray"><span class="badge-dot"></span> Đã hủy</span>
+              <% } %>
+            </td>
+            <td class="actions" style="justify-content:center;">
+              <% if (sd.TrangThai !== 'DaHuy') { %>
+                <form class="form-confirm-delete" data-confirm="Xác nhận hủy lượt đổi này? Hệ thống sẽ hoàn lại <%= sd.DiemDaDoi %> điểm cho khách hàng." method="POST" action="/su-dung-uu-dai/<%= sd._id %>/huy" style="margin:0;">
+                  <button type="submit" class="btn btn-sm btn-danger" title="Hủy lượt đổi và hoàn điểm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span>Hủy &amp; Hoàn điểm</span>
+                  </button>
+                </form>
+              <% } else { %>
+                <span style="color:var(--text-muted); font-size:12px;">Đã hoàn tất</span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card" style="max-width:760px;">
+  <div class="page-header" style="margin-bottom:12px;">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><path d="M20 12l-8 8-9-9V4h7z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>
+      Thực hiện Đổi ưu đãi mới
+    </h3>
+  </div>
+  <p style="color:var(--text-muted); font-size:13px; margin-top:-6px; margin-bottom:18px;">
+    Hệ thống sẽ tự động kiểm tra số điểm tích lũy hiện tại và hạn dùng ưu đãi qua AJAX trước khi trừ điểm.
+  </p>
+  <form method="POST" action="/su-dung-uu-dai">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Khách hàng *</label>
+        <select name="maKhachHang" id="select-khach-hang-uu-dai" required>
+          <option value="">-- Chọn khách hàng --</option>
+          <% dsKhachHang.forEach(function(kh) { %>
+            <option value="<%= kh._id %>"><%= kh._id %> - <%= kh.HoTen %> (Có: <%= (kh.DiemHienTai || 0).toLocaleString('vi-VN') %> điểm)</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Gói ưu đãi cần đổi *</label>
+        <select name="maUuDai" id="select-uu-dai" required>
+          <option value="">-- Chọn ưu đãi --</option>
+          <% dsUuDai.forEach(function(ud) { %>
+            <option value="<%= ud._id %>"><%= ud.TenUuDai %> (Cần: <%= ud.DiemCanDoi %> điểm)</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Giao dịch liên quan (tùy chọn)</label>
+        <select name="maGiaoDich">
+          <option value="">-- Không liên kết --</option>
+          <% dsGiaoDich.forEach(function(gd) { %>
+            <option value="<%= gd._id %>"><%= gd._id %> - <%= gd.MaKhachHang %> (<%= gd.NgayGiaoDich %>)</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ngày sử dụng</label>
+        <input type="date" name="ngaySuDung" value="<%= homNay %>">
+      </div>
+      <div class="form-group full">
+        <div id="lbl-dieu-kien-uu-dai" class="form-hint"></div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Xác nhận đổi ưu đãi</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

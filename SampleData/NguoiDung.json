@@ -1,0 +1,52 @@
+[
+    {
+        "_id": "ND001",
+        "HoTen": "Nguyễn Văn Minh",
+        "TenDangNhap": "admin",
+        "MatKhau": "123456",
+        "Email": "admin@qlkhachhang.com",
+        "VaiTro": "Admin",
+        "TrangThai": "HoatDong",
+        "NgayTao": "2026-01-05"
+    },
+    {
+        "_id": "ND002",
+        "HoTen": "Trần Thị Lan",
+        "TenDangNhap": "lan.tran",
+        "MatKhau": "123456",
+        "Email": "lan.tran@qlkhachhang.com",
+        "VaiTro": "NhanVien",
+        "TrangThai": "HoatDong",
+        "NgayTao": "2026-01-10"
+    },
+    {
+        "_id": "ND003",
+        "HoTen": "Lê Hoàng Nam",
+        "TenDangNhap": "nam.le",
+        "MatKhau": "123456",
+        "Email": "nam.le@qlkhachhang.com",
+        "VaiTro": "NhanVien",
+        "TrangThai": "HoatDong",
+        "NgayTao": "2026-02-01"
+    },
+    {
+        "_id": "ND004",
+        "HoTen": "Phạm Ngọc Anh",
+        "TenDangNhap": "anh.pham",
+        "MatKhau": "123456",
+        "Email": "anh.pham@qlkhachhang.com",
+        "VaiTro": "NhanVien",
+        "TrangThai": "HoatDong",
+        "NgayTao": "2026-02-15"
+    },
+    {
+        "_id": "ND005",
+        "HoTen": "Võ Quốc Bảo",
+        "TenDangNhap": "bao.vo",
+        "MatKhau": "123456",
+        "Email": "bao.vo@qlkhachhang.com",
+        "VaiTro": "NhanVien",
+        "TrangThai": "KhongHoatDong",
+        "NgayTao": "2026-03-01"
+    }
+]

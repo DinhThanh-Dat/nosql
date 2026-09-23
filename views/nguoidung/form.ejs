@@ -1,0 +1,56 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<div class="page-header">
+  <h1><%= nd ? 'Sửa người dùng ' + nd._id : 'Thêm người dùng mới' %></h1>
+  <a href="/nguoi-dung" class="btn btn-secondary">&larr; Quay lại danh sách</a>
+</div>
+
+<div class="card" style="max-width:640px;">
+  <form method="POST" action="<%= nd ? '/nguoi-dung/' + nd._id : '/nguoi-dung' %>">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Họ tên *</label>
+        <input type="text" name="hoTen" required value="<%= nd ? nd.HoTen : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Tên đăng nhập *</label>
+        <input type="text" name="tenDangNhap" required value="<%= nd ? nd.TenDangNhap : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="<%= nd ? nd.Email : '' %>">
+      </div>
+      <div class="form-group">
+        <label><%= nd ? 'Mật khẩu mới (để trống nếu không đổi)' : 'Mật khẩu *' %></label>
+        <input type="text" name="matKhau" <%= nd ? '' : 'required' %> placeholder="<%= nd ? '••••••' : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Vai trò *</label>
+        <select name="vaiTro" required>
+          <option value="NhanVien" <%= !nd || nd.VaiTro === 'NhanVien' ? 'selected' : '' %>>Nhân viên</option>
+          <option value="Admin" <%= nd && nd.VaiTro === 'Admin' ? 'selected' : '' %>>Quản trị viên (Admin)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Trạng thái</label>
+        <select name="trangThai">
+          <option value="HoatDong" <%= !nd || nd.TrangThai === 'HoatDong' ? 'selected' : '' %>>Hoạt động</option>
+          <option value="KhongHoatDong" <%= nd && nd.TrangThai === 'KhongHoatDong' ? 'selected' : '' %>>Khóa tài khoản</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <p class="form-hint" style="color:var(--text-muted);">
+          Lưu ý bảo mật: mật khẩu đang được lưu dạng văn bản thường (plaintext) để tiện demo/chấm điểm theo
+          đúng dữ liệu mẫu đề tài. Khi triển khai thực tế nên băm mật khẩu (bcrypt) trước khi lưu.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><%= nd ? 'Cập nhật' : 'Thêm mới' %></button>
+      <a href="/nguoi-dung" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

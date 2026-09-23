@@ -1,0 +1,95 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<div class="page-header">
+  <h1><%= kh ? 'Sửa khách hàng ' + kh._id : 'Thêm khách hàng mới' %></h1>
+  <a href="/khach-hang" class="btn btn-secondary">&larr; Quay lại danh sách</a>
+</div>
+
+<div class="card">
+  <form method="POST" action="<%= kh ? '/khach-hang/' + kh._id : '/khach-hang' %>">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Họ tên *</label>
+        <input type="text" name="hoTen" required value="<%= kh ? kh.HoTen : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Giới tính</label>
+        <select name="gioiTinh">
+          <option value="Nam" <%= kh && kh.GioiTinh === 'Nam' ? 'selected' : '' %>>Nam</option>
+          <option value="Nu" <%= kh && kh.GioiTinh === 'Nu' ? 'selected' : '' %>>Nữ</option>
+          <option value="Khac" <%= kh && kh.GioiTinh === 'Khac' ? 'selected' : '' %>>Khác</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ngày sinh</label>
+        <input type="date" name="ngaySinh" value="<%= kh ? kh.NgaySinh : '' %>">
+      </div>
+
+      <div class="form-group">
+        <label>Số điện thoại *</label>
+        <input type="text" name="soDienThoai" required value="<%= kh ? kh.SoDienThoai : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="<%= kh ? kh.Email : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Ngày đăng ký</label>
+        <input type="date" name="ngayDangKy" value="<%= kh ? kh.NgayDangKy : new Date().toISOString().slice(0,10) %>">
+      </div>
+
+      <div class="form-group">
+        <label>Số nhà</label>
+        <input type="text" name="soNha" value="<%= kh && kh.DiaChi ? kh.DiaChi.SoNha : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Đường</label>
+        <input type="text" name="duong" value="<%= kh && kh.DiaChi ? kh.DiaChi.Duong : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Quận</label>
+        <input type="text" name="quan" value="<%= kh && kh.DiaChi ? kh.DiaChi.Quan : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Thành phố</label>
+        <input type="text" name="thanhPho" value="<%= kh && kh.DiaChi ? kh.DiaChi.ThanhPho : '' %>">
+      </div>
+
+      <div class="form-group">
+        <label>Hạng thành viên *</label>
+        <select name="maHang" required>
+          <% dsHang.forEach(function(h) { %>
+            <option value="<%= h._id %>" <%= kh && kh.HangThanhVien && kh.HangThanhVien.MaHang === h._id ? 'selected' : '' %>>
+              <%= h.TenHang %> (<%= h.DiemToiThieu %><%= h.DiemToiDa != null ? ' - ' + h.DiemToiDa : '+' %> điểm)
+            </option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Điểm hiện tại</label>
+        <input type="number" name="diemHienTai" min="0" value="<%= kh ? kh.DiemHienTai : 0 %>">
+      </div>
+      <div class="form-group">
+        <label>Trạng thái</label>
+        <select name="trangThai">
+          <option value="HoatDong" <%= !kh || kh.TrangThai === 'HoatDong' ? 'selected' : '' %>>Hoạt động</option>
+          <option value="KhongHoatDong" <%= kh && kh.TrangThai === 'KhongHoatDong' ? 'selected' : '' %>>Ngừng hoạt động</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <p class="form-hint" style="color:var(--text-muted);">
+          Ghi chú: Điểm hiện tại và hạng thành viên thường được cập nhật <strong>tự động</strong> khi có giao dịch
+          hoặc đổi ưu đãi. Chỉ chỉnh trực tiếp tại đây khi cần điều chỉnh thủ công.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><%= kh ? 'Cập nhật' : 'Thêm mới' %></button>
+      <a href="/khach-hang" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('partials/head') %>
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-card">
+      <img src="/img/logo.svg" alt="Loyalty CRM">
+      <h1>LOYALTY CRM PORTAL</h1>
+      <p class="subtitle">Đăng nhập tài khoản quản trị &amp; nghiệp vụ</p>
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <div class="alert alert-error"><%= error %></div>
+      <% } %>
+
+      <form method="POST" action="/login" id="form-login">
+        <div class="form-group">
+          <label for="tenDangNhap">Tên đăng nhập</label>
+          <input type="text" id="tenDangNhap" name="tenDangNhap" required autofocus placeholder="Nhập username...">
+        </div>
+        <div class="form-group">
+          <label for="matKhau">Mật khẩu bảo mật</label>
+          <input type="password" id="matKhau" name="matKhau" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <span>Đăng nhập hệ thống</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+
+      <div class="demo-hint">
+        <span class="demo-hint-title">Tài khoản mẫu (Bấm để tự động điền):</span>
+        <div class="demo-chips">
+          <div class="demo-chip" data-user="admin" data-pass="123456" title="Bấm để đăng nhập bằng tài khoản Quản trị viên">
+            <span>🛡️ <strong>Quản trị viên (Admin)</strong></span>
+            <code>admin / 123456</code>
+          </div>
+          <div class="demo-chip" data-user="lan.tran" data-pass="123456" title="Bấm để đăng nhập bằng tài khoản Nhân viên">
+            <span>👤 <strong>Nhân viên</strong></span>
+            <code>lan.tran / 123456</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/app.js"></script>
+</body>
+</html>

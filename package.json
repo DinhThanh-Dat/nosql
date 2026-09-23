@@ -1,0 +1,20 @@
+{
+  "name": "qlkhachhangthanthiet-web",
+  "version": "1.0.0",
+  "description": "Ung dung web Quan ly Khach hang than thiet - Node.js + Express + EJS + MongoDB Driver",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["mongodb", "express", "ejs", "nosql"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongodb": "^7.6.0"
+  }
+}

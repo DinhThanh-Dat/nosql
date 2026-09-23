@@ -1,0 +1,98 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<div class="page-header">
+  <h1><%= gd ? 'Sửa giao dịch ' + gd._id : 'Thêm giao dịch mới' %></h1>
+  <a href="/giao-dich" class="btn btn-secondary">&larr; Quay lại danh sách</a>
+</div>
+
+<div class="card">
+  <form method="POST" action="<%= gd ? '/giao-dich/' + gd._id : '/giao-dich' %>">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Khách hàng *</label>
+        <select name="maKhachHang" required>
+          <% dsKhachHang.forEach(function(kh) { %>
+            <option value="<%= kh._id %>" <%= gd && gd.MaKhachHang === kh._id ? 'selected' : '' %>><%= kh._id %> - <%= kh.HoTen %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ngày giao dịch</label>
+        <input type="date" name="ngayGiaoDich" value="<%= gd ? gd.NgayGiaoDich : new Date().toISOString().slice(0,10) %>">
+      </div>
+      <div class="form-group">
+        <label>Chi nhánh</label>
+        <input type="text" name="chiNhanh" placeholder="VD: CN01" value="<%= gd ? gd.ChiNhanh : '' %>">
+      </div>
+
+      <div class="form-group">
+        <label>Loại giao dịch</label>
+        <select name="loaiGiaoDich">
+          <option value="MuaHang" <%= !gd || gd.LoaiGiaoDich === 'MuaHang' ? 'selected' : '' %>>Mua hàng</option>
+          <option value="TraHang" <%= gd && gd.LoaiGiaoDich === 'TraHang' ? 'selected' : '' %>>Trả hàng</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Phương thức thanh toán</label>
+        <select name="phuongThucThanhToan">
+          <option value="TienMat" <%= gd && gd.PhuongThucThanhToan === 'TienMat' ? 'selected' : '' %>>Tiền mặt</option>
+          <option value="ChuyenKhoan" <%= !gd || gd.PhuongThucThanhToan === 'ChuyenKhoan' ? 'selected' : '' %>>Chuyển khoản</option>
+          <option value="The" <%= gd && gd.PhuongThucThanhToan === 'The' ? 'selected' : '' %>>Thẻ</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Trạng thái</label>
+        <select name="trangThai">
+          <option value="HoanTat" <%= !gd || gd.TrangThai === 'HoanTat' ? 'selected' : '' %>>Hoàn tất</option>
+          <option value="DangXuLy" <%= gd && gd.TrangThai === 'DangXuLy' ? 'selected' : '' %>>Đang xử lý</option>
+          <option value="Huy" <%= gd && gd.TrangThai === 'Huy' ? 'selected' : '' %>>Hủy</option>
+        </select>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Danh sách sản phẩm</h3>
+    <div class="subtable-wrap">
+      <table id="bang-san-pham">
+        <thead>
+          <tr>
+            <th style="width:16%;">Mã SP</th>
+            <th>Tên sản phẩm</th>
+            <th style="width:12%;">Số lượng</th>
+            <th style="width:16%;">Đơn giá</th>
+            <th style="width:16%;">Thành tiền</th>
+            <th style="width:8%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (gd && gd.SanPham && gd.SanPham.length > 0) { %>
+            <% gd.SanPham.forEach(function(sp) { %>
+              <tr>
+                <td><input type="text" name="maSanPham" value="<%= sp.MaSanPham %>"></td>
+                <td><input type="text" name="tenSanPham" value="<%= sp.TenSanPham %>" required></td>
+                <td><input type="number" name="soLuong" min="1" step="1" class="input-so-luong" value="<%= sp.SoLuong %>"></td>
+                <td><input type="number" name="donGia" min="0" step="1000" class="input-don-gia" value="<%= sp.DonGia %>"></td>
+                <td class="thanh-tien num">0 đ</td>
+                <td><button type="button" class="btn btn-sm btn-danger btn-xoa-dong">Xóa</button></td>
+              </tr>
+            <% }) %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px;">
+      <button type="button" id="btn-them-dong-sp" class="btn btn-secondary btn-sm">+ Thêm dòng sản phẩm</button>
+    </div>
+
+    <div class="subtable-total">
+      <span>Tổng tiền: <span id="lbl-tong-tien">0 đ</span></span>
+      <span>Điểm nhận dự kiến: <span id="lbl-diem-nhan">0</span></span>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><%= gd ? 'Cập nhật' : 'Thêm giao dịch' %></button>
+      <a href="/giao-dich" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

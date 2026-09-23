@@ -1,0 +1,119 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<%
+  function sortUrl(field) {
+    var params = new URLSearchParams();
+    if (q) params.set('q', q);
+    var newOrder = (sortField === field && sortOrder === 1) ? 'desc' : 'asc';
+    params.set('sort', field);
+    params.set('order', newOrder);
+    return '?' + params.toString();
+  }
+  function arrow(field) {
+    return sortField === field ? '<span class="sort-arrow">' + (sortOrder === 1 ? '&#9650;' : '&#9660;') + '</span>' : '';
+  }
+%>
+
+<div class="page-header">
+  <div>
+    <h1>Hồ sơ khách hàng</h1>
+    <p style="margin:4px 0 0; color:var(--text-muted); font-size:13px;">Quản lý thông tin định danh, số điện thoại, điểm tích lũy và phân hạng thành viên</p>
+  </div>
+  <a href="/khach-hang/new" class="btn btn-primary">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    <span>Thêm khách hàng</span>
+  </a>
+</div>
+
+<div class="card">
+  <div class="toolbar">
+    <form method="GET" action="/khach-hang">
+      <div style="position:relative; flex:1; min-width:260px;">
+        <input type="text" name="q" class="grow" placeholder="Tìm theo mã KH, họ tên, số điện thoại, email..." value="<%= q %>">
+      </div>
+      <button type="submit" class="btn btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Tìm kiếm</span>
+      </button>
+      <% if (q) { %>
+        <a href="/khach-hang" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>Bỏ lọc</span>
+        </a>
+      <% } %>
+    </form>
+    <div style="font-size:13px; color:var(--text-muted); font-weight:600;">
+      Tổng: <strong style="color:var(--text-main);"><%= danhSach.length %></strong> khách
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th><a href="<%= sortUrl('_id') %>">Mã KH <%- arrow('_id') %></a></th>
+          <th><a href="<%= sortUrl('HoTen') %>">Khách hàng <%- arrow('HoTen') %></a></th>
+          <th>Giới tính</th>
+          <th><a href="<%= sortUrl('SoDienThoai') %>">Số điện thoại <%- arrow('SoDienThoai') %></a></th>
+          <th>Email</th>
+          <th>Hạng</th>
+          <th style="text-align:right;"><a href="<%= sortUrl('DiemHienTai') %>">Điểm hiện tại <%- arrow('DiemHienTai') %></a></th>
+          <th><a href="<%= sortUrl('NgayDangKy') %>">Ngày ĐK <%- arrow('NgayDangKy') %></a></th>
+          <th><a href="<%= sortUrl('TrangThai') %>">Trạng thái <%- arrow('TrangThai') %></a></th>
+          <th style="text-align:center;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (danhSach.length === 0) { %>
+          <tr class="empty-row"><td colspan="10">Không tìm thấy khách hàng nào phù hợp với điều kiện tìm kiếm.</td></tr>
+        <% } %>
+        <% danhSach.forEach(function(kh) { %>
+          <tr>
+            <td><strong style="color:var(--primary-700);"><%= kh._id %></strong></td>
+            <td>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:28px; height:28px; border-radius:50%; background:var(--primary-50); color:var(--primary-700); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">
+                  <%= (kh.HoTen || '?').trim().charAt(0).toUpperCase() %>
+                </div>
+                <strong><%= kh.HoTen %></strong>
+              </div>
+            </td>
+            <td><%= kh.GioiTinh %></td>
+            <td><%= kh.SoDienThoai %></td>
+            <td><%= kh.Email || '-' %></td>
+            <td>
+              <span class="badge badge-blue">
+                <%= kh.HangThanhVien ? kh.HangThanhVien.TenHang : 'Chưa xếp' %>
+              </span>
+            </td>
+            <td class="num" style="font-weight:700; color:var(--slate-900);">
+              <%= (kh.DiemHienTai || 0).toLocaleString('vi-VN') %>
+            </td>
+            <td><%= kh.NgayDangKy %></td>
+            <td>
+              <% if (kh.TrangThai === 'HoatDong') { %>
+                <span class="badge badge-success"><span class="badge-dot"></span> Hoạt động</span>
+              <% } else { %>
+                <span class="badge badge-gray"><span class="badge-dot"></span> Ngừng hoạt động</span>
+              <% } %>
+            </td>
+            <td class="actions" style="justify-content:center;">
+              <a href="/khach-hang/<%= kh._id %>/edit" class="btn btn-sm btn-secondary" title="Chỉnh sửa thông tin">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <span>Sửa</span>
+              </a>
+              <form class="form-confirm-delete" data-confirm="Xác nhận xóa khách hàng <%= kh._id %> - <%= kh.HoTen %>?" method="POST" action="/khach-hang/<%= kh._id %>/delete" style="margin:0;">
+                <button type="submit" class="btn btn-sm btn-danger" title="Xóa khách hàng">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Xóa</span>
+                </button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/layout-end') %>

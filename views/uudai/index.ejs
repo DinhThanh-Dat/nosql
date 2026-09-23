@@ -1,0 +1,86 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<%
+  function sortUrl(field) {
+    var params = new URLSearchParams();
+    var newOrder = (sortField === field && sortOrder === 1) ? 'desc' : 'asc';
+    params.set('sort', field);
+    params.set('order', newOrder);
+    return '?' + params.toString();
+  }
+  function arrow(field) {
+    return sortField === field ? '<span class="sort-arrow">' + (sortOrder === 1 ? '&#9650;' : '&#9660;') + '</span>' : '';
+  }
+%>
+
+<div class="page-header">
+  <div>
+    <h1>Danh mục Ưu đãi &amp; Khuyến mãi</h1>
+    <p style="margin:4px 0 0; color:var(--text-muted); font-size:13px;">Thiết lập các gói voucher, giảm giá và định mức điểm quy đổi</p>
+  </div>
+  <a href="/uu-dai/new" class="btn btn-primary">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    <span>Tạo ưu đãi mới</span>
+  </a>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th><a href="<%= sortUrl('_id') %>">Mã <%- arrow('_id') %></a></th>
+          <th><a href="<%= sortUrl('TenUuDai') %>">Tên gói ưu đãi <%- arrow('TenUuDai') %></a></th>
+          <th>Loại</th>
+          <th style="text-align:right;"><a href="<%= sortUrl('GiaTri') %>">Giá trị <%- arrow('GiaTri') %></a></th>
+          <th style="text-align:right;"><a href="<%= sortUrl('DiemCanDoi') %>">Điểm cần đổi <%- arrow('DiemCanDoi') %></a></th>
+          <th>Hiệu lực từ</th>
+          <th>Hết hạn vào</th>
+          <th style="text-align:right;">Tổng SL</th>
+          <th style="text-align:right;"><a href="<%= sortUrl('SoLuongDaSuDung') %>">Đã dùng <%- arrow('SoLuongDaSuDung') %></a></th>
+          <th><a href="<%= sortUrl('TrangThai') %>">Trạng thái <%- arrow('TrangThai') %></a></th>
+          <th style="text-align:center;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (danhSach.length === 0) { %>
+          <tr class="empty-row"><td colspan="11">Chưa có chương trình ưu đãi nào.</td></tr>
+        <% } %>
+        <% danhSach.forEach(function(ud) { %>
+          <tr>
+            <td><strong style="color:var(--primary-700);"><%= ud._id %></strong></td>
+            <td><strong><%= ud.TenUuDai %></strong></td>
+            <td><span class="badge badge-gray"><%= ud.LoaiUuDai %></span></td>
+            <td class="num" style="color:var(--primary-700); font-weight:700;"><%= Number(ud.GiaTri).toLocaleString('vi-VN') %><%= ud.LoaiUuDai === 'GiamGiaPhanTram' ? '%' : ' đ' %></td>
+            <td class="num" style="color:var(--warning-text); font-weight:700;"><%= ud.DiemCanDoi %> pts</td>
+            <td><%= ud.NgayBatDau %></td>
+            <td><%= ud.NgayKetThuc %></td>
+            <td class="num"><%= ud.SoLuong %></td>
+            <td class="num" style="font-weight:600;"><%= ud.SoLuongDaSuDung %></td>
+            <td>
+              <% if (ud.TrangThai === 'DangApDung') { %>
+                <span class="badge badge-success"><span class="badge-dot"></span> Đang áp dụng</span>
+              <% } else { %>
+                <span class="badge badge-gray"><span class="badge-dot"></span> Ngừng áp dụng</span>
+              <% } %>
+            </td>
+            <td class="actions" style="justify-content:center;">
+              <a href="/uu-dai/<%= ud._id %>/edit" class="btn btn-sm btn-secondary" title="Sửa ưu đãi">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                <span>Sửa</span>
+              </a>
+              <form class="form-confirm-delete" data-confirm="Xác nhận xóa ưu đãi <%= ud.TenUuDai %>?" method="POST" action="/uu-dai/<%= ud._id %>/delete" style="margin:0;">
+                <button type="submit" class="btn btn-sm btn-danger" title="Xóa ưu đãi">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Xóa</span>
+                </button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/layout-end') %>

@@ -1,0 +1,169 @@
+[
+    {
+        "_id": "UD001",
+        "TenUuDai": "Giảm 50.000đ",
+        "LoaiUuDai": "GiamTien",
+        "GiaTri": 50000,
+        "DiemCanDoi": 500,
+        "HangApDung": [
+            "HTV002",
+            "HTV003",
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-01-01",
+        "NgayKetThuc": "2026-12-31",
+        "SoLuong": 200,
+        "SoLuongDaSuDung": 32,
+        "TrangThai": "DangApDung",
+        "MoTa": "Giảm 50.000đ cho đơn hàng từ 500.000đ"
+    },
+    {
+        "_id": "UD002",
+        "TenUuDai": "Giảm 10%",
+        "LoaiUuDai": "GiamPhanTram",
+        "GiaTri": 10,
+        "DiemCanDoi": 1000,
+        "HangApDung": [
+            "HTV003",
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-02-01",
+        "NgayKetThuc": "2026-10-31",
+        "SoLuong": 100,
+        "SoLuongDaSuDung": 28,
+        "TrangThai": "DangApDung",
+        "MoTa": "Giảm 10% tối đa 200.000đ"
+    },
+    {
+        "_id": "UD003",
+        "TenUuDai": "Voucher 100.000đ",
+        "LoaiUuDai": "GiamTien",
+        "GiaTri": 100000,
+        "DiemCanDoi": 1500,
+        "HangApDung": [
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-01-15",
+        "NgayKetThuc": "2026-09-30",
+        "SoLuong": 80,
+        "SoLuongDaSuDung": 18,
+        "TrangThai": "DangApDung",
+        "MoTa": "Voucher dành cho thành viên Kim cương"
+    },
+    {
+        "_id": "UD004",
+        "TenUuDai": "Voucher 150.000đ",
+        "LoaiUuDai": "GiamTien",
+        "GiaTri": 150000,
+        "DiemCanDoi": 2000,
+        "HangApDung": [
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-03-01",
+        "NgayKetThuc": "2026-08-31",
+        "SoLuong": 60,
+        "SoLuongDaSuDung": 15,
+        "TrangThai": "HetHan",
+        "MoTa": "Ưu đãi đặc biệt cho khách hàng VIP"
+    },
+    {
+        "_id": "UD005",
+        "TenUuDai": "Giảm 20%",
+        "LoaiUuDai": "GiamPhanTram",
+        "GiaTri": 20,
+        "DiemCanDoi": 3000,
+        "HangApDung": [
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-01-01",
+        "NgayKetThuc": "2026-06-30",
+        "SoLuong": 50,
+        "SoLuongDaSuDung": 22,
+        "TrangThai": "HetHan",
+        "MoTa": "Giảm 20% cho đơn hàng từ 1.000.000đ"
+    },
+    {
+        "_id": "UD006",
+        "TenUuDai": "Quà sinh nhật 100.000đ",
+        "LoaiUuDai": "QuaTang",
+        "GiaTri": 100000,
+        "DiemCanDoi": 2500,
+        "HangApDung": [
+            "HTV003",
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-01-01",
+        "NgayKetThuc": "2026-12-31",
+        "SoLuong": 120,
+        "SoLuongDaSuDung": 40,
+        "TrangThai": "DangApDung",
+        "MoTa": "Quà tặng sinh nhật dành cho thành viên Vàng và Kim cương"
+    },
+    {
+        "_id": "UD007",
+        "TenUuDai": "Miễn phí vận chuyển",
+        "LoaiUuDai": "MienPhiVanChuyen",
+        "GiaTri": 30000,
+        "DiemCanDoi": 1200,
+        "HangApDung": [
+            "HTV002",
+            "HTV003",
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-04-01",
+        "NgayKetThuc": "2026-12-31",
+        "SoLuong": 300,
+        "SoLuongDaSuDung": 75,
+        "TrangThai": "DangApDung",
+        "MoTa": "Miễn phí vận chuyển cho một đơn hàng"
+    },
+    {
+        "_id": "UD008",
+        "TenUuDai": "Voucher 200.000đ",
+        "LoaiUuDai": "GiamTien",
+        "GiaTri": 200000,
+        "DiemCanDoi": 3500,
+        "HangApDung": [
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-05-01",
+        "NgayKetThuc": "2026-11-30",
+        "SoLuong": 40,
+        "SoLuongDaSuDung": 9,
+        "TrangThai": "DangApDung",
+        "MoTa": "Voucher cao cấp dành cho khách hàng Kim cương"
+    },
+    {
+        "_id": "UD009",
+        "TenUuDai": "Giảm 15%",
+        "LoaiUuDai": "GiamPhanTram",
+        "GiaTri": 15,
+        "DiemCanDoi": 1800,
+        "HangApDung": [
+            "HTV003",
+            "HTV004"
+        ],
+        "NgayBatDau": "2026-05-15",
+        "NgayKetThuc": "2026-10-15",
+        "SoLuong": 90,
+        "SoLuongDaSuDung": 31,
+        "TrangThai": "DangApDung",
+        "MoTa": "Giảm 15% tối đa 150.000đ"
+    },
+    {
+        "_id": "UD010",
+        "TenUuDai": "Quà tặng thành viên mới",
+        "LoaiUuDai": "QuaTang",
+        "GiaTri": 80000,
+        "DiemCanDoi": 0,
+        "HangApDung": [
+            "HTV001"
+        ],
+        "NgayBatDau": "2026-01-01",
+        "NgayKetThuc": "2026-12-31",
+        "SoLuong": 500,
+        "SoLuongDaSuDung": 120,
+        "TrangThai": "DangApDung",
+        "MoTa": "Quà chào mừng dành cho thành viên mới"
+    }
+]

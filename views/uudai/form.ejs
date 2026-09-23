@@ -1,0 +1,83 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<div class="page-header">
+  <h1><%= ud ? 'Sửa ưu đãi ' + ud._id : 'Thêm ưu đãi mới' %></h1>
+  <a href="/uu-dai" class="btn btn-secondary">&larr; Quay lại danh sách</a>
+</div>
+
+<div class="card">
+  <form method="POST" action="<%= ud ? '/uu-dai/' + ud._id : '/uu-dai' %>">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Tên ưu đãi *</label>
+        <input type="text" name="tenUuDai" required value="<%= ud ? ud.TenUuDai : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Loại ưu đãi</label>
+        <select name="loaiUuDai">
+          <option value="GiamTien" <%= !ud || ud.LoaiUuDai === 'GiamTien' ? 'selected' : '' %>>Giảm tiền</option>
+          <option value="GiamPhanTram" <%= ud && ud.LoaiUuDai === 'GiamPhanTram' ? 'selected' : '' %>>Giảm phần trăm</option>
+          <option value="QuaTang" <%= ud && ud.LoaiUuDai === 'QuaTang' ? 'selected' : '' %>>Quà tặng</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Giá trị</label>
+        <input type="number" name="giaTri" min="0" value="<%= ud ? ud.GiaTri : 0 %>">
+      </div>
+      <div class="form-group">
+        <label>Điểm cần đổi *</label>
+        <input type="number" name="diemCanDoi" required min="0" value="<%= ud ? ud.DiemCanDoi : 0 %>">
+      </div>
+
+      <div class="form-group">
+        <label>Từ ngày</label>
+        <input type="date" name="ngayBatDau" value="<%= ud ? ud.NgayBatDau : new Date().toISOString().slice(0,10) %>">
+      </div>
+      <div class="form-group">
+        <label>Đến ngày</label>
+        <input type="date" name="ngayKetThuc" value="<%= ud ? ud.NgayKetThuc : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Số lượng</label>
+        <input type="number" name="soLuong" min="0" value="<%= ud ? ud.SoLuong : 0 %>">
+      </div>
+      <div class="form-group">
+        <label>Đã sử dụng</label>
+        <input type="number" name="soLuongDaSuDung" min="0" value="<%= ud ? ud.SoLuongDaSuDung : 0 %>">
+      </div>
+
+      <div class="form-group">
+        <label>Trạng thái</label>
+        <select name="trangThai">
+          <option value="DangApDung" <%= !ud || ud.TrangThai === 'DangApDung' ? 'selected' : '' %>>Đang áp dụng</option>
+          <option value="NgungApDung" <%= ud && ud.TrangThai === 'NgungApDung' ? 'selected' : '' %>>Ngừng áp dụng</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Áp dụng cho hạng (bỏ trống = áp dụng cho tất cả hạng)</label>
+        <div class="checklist">
+          <% dsHang.forEach(function(h) { %>
+            <label>
+              <input type="checkbox" name="hangApDung" value="<%= h._id %>"
+                <%= ud && ud.HangApDung && ud.HangApDung.includes(h._id) ? 'checked' : '' %>>
+              <%= h.TenHang %>
+            </label>
+          <% }) %>
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label>Mô tả</label>
+        <textarea name="moTa"><%= ud ? ud.MoTa : '' %></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><%= ud ? 'Cập nhật' : 'Thêm mới' %></button>
+      <a href="/uu-dai" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

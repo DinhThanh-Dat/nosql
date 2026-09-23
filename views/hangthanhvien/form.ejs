@@ -1,0 +1,53 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<div class="page-header">
+  <h1><%= hang ? 'Sửa hạng thành viên ' + hang._id : 'Thêm hạng thành viên' %></h1>
+  <a href="/hang-thanh-vien" class="btn btn-secondary">&larr; Quay lại danh sách</a>
+</div>
+
+<div class="card" style="max-width:640px;">
+  <form method="POST" action="<%= hang ? '/hang-thanh-vien/' + hang._id : '/hang-thanh-vien' %>">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Tên hạng *</label>
+        <input type="text" name="tenHang" required value="<%= hang ? hang.TenHang : '' %>">
+      </div>
+      <div class="form-group">
+        <label>Điểm tối thiểu *</label>
+        <input type="number" name="diemToiThieu" required min="0" value="<%= hang ? hang.DiemToiThieu : 0 %>">
+      </div>
+      <div class="form-group">
+        <label>Điểm tối đa</label>
+        <input type="number" name="diemToiDa" min="0" id="input-diem-toi-da"
+               value="<%= hang && hang.DiemToiDa != null ? hang.DiemToiDa : '' %>"
+               <%= hang && hang.DiemToiDa == null ? 'disabled' : '' %>>
+        <label class="checkbox-row">
+          <input type="checkbox" name="khongGioiHan" id="chk-khong-gioi-han"
+            <%= hang && hang.DiemToiDa == null ? 'checked' : '' %>>
+          Không giới hạn (hạng cao nhất)
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Tỷ lệ ưu đãi (%)</label>
+        <input type="number" name="tyLeUuDai" min="0" max="100" value="<%= hang ? hang.TyLeUuDai : 0 %>">
+      </div>
+      <div class="form-group full">
+        <label>Mô tả</label>
+        <textarea name="moTa"><%= hang ? hang.MoTa : '' %></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><%= hang ? 'Cập nhật' : 'Thêm mới' %></button>
+      <a href="/hang-thanh-vien" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('chk-khong-gioi-han').addEventListener('change', function () {
+    document.getElementById('input-diem-toi-da').disabled = this.checked;
+  });
+</script>
+
+<%- include('../partials/layout-end') %>

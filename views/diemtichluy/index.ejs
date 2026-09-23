@@ -1,0 +1,151 @@
+<%- include('../partials/layout-start', { title }) %>
+
+<%
+  function sortUrl(field) {
+    var params = new URLSearchParams();
+    if (maKhachHang) params.set('maKhachHang', maKhachHang);
+    var newOrder = (sortField === field && sortOrder === 1) ? 'desc' : 'asc';
+    params.set('sort', field);
+    params.set('order', newOrder);
+    return '?' + params.toString();
+  }
+  function arrow(field) {
+    return sortField === field ? '<span class="sort-arrow">' + (sortOrder === 1 ? '&#9650;' : '&#9660;') + '</span>' : '';
+  }
+%>
+
+<div class="page-header">
+  <div>
+    <h1>Nhật ký Điểm tích lũy</h1>
+    <p style="margin:4px 0 0; color:var(--text-muted); font-size:13px;">Theo dõi biến động điểm thưởng (cộng điểm mua hàng, trừ điểm đổi quà)</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="toolbar">
+    <form method="GET" action="/diem-tich-luy">
+      <select name="maKhachHang" style="min-width:240px;">
+        <option value="">-- Tất cả khách hàng --</option>
+        <% dsKhachHang.forEach(function(kh) { %>
+          <option value="<%= kh._id %>" <%= maKhachHang === kh._id ? 'selected' : '' %>><%= kh._id %> - <%= kh.HoTen %></option>
+        <% }) %>
+      </select>
+      <button type="submit" class="btn btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        <span>Lọc</span>
+      </button>
+      <% if (maKhachHang) { %>
+        <a href="/diem-tich-luy" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>Bỏ lọc</span>
+        </a>
+      <% } %>
+    </form>
+    <div style="font-size:13px; color:var(--text-muted); font-weight:600;">
+      Số bản ghi: <strong style="color:var(--text-main);"><%= danhSach.length %></strong>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th><a href="<%= sortUrl('_id') %>">Mã <%- arrow('_id') %></a></th>
+          <th><a href="<%= sortUrl('MaKhachHang') %>">Khách hàng <%- arrow('MaKhachHang') %></a></th>
+          <th>Giao dịch liên quan</th>
+          <th><a href="<%= sortUrl('Loai') %>">Loại biến động <%- arrow('Loai') %></a></th>
+          <th style="text-align:right;"><a href="<%= sortUrl('SoDiem') %>">Số điểm <%- arrow('SoDiem') %></a></th>
+          <th style="text-align:right;">Điểm trước</th>
+          <th style="text-align:right;">Điểm sau</th>
+          <th>Lý do ghi nhận</th>
+          <th><a href="<%= sortUrl('NgayTao') %>">Thời gian <%- arrow('NgayTao') %></a></th>
+          <th style="text-align:center;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (danhSach.length === 0) { %>
+          <tr class="empty-row"><td colspan="10">Chưa có lịch sử biến động điểm nào phù hợp.</td></tr>
+        <% } %>
+        <% danhSach.forEach(function(dt) { %>
+          <tr>
+            <td><strong style="color:var(--primary-700);"><%= dt._id %></strong></td>
+            <td><span class="badge badge-gray"><%= dt.MaKhachHang %></span></td>
+            <td><%= dt.MaGiaoDich || '-' %></td>
+            <td>
+              <% if (dt.Loai === 'Cong') { %>
+                <span class="badge badge-success"><span class="badge-dot"></span> Cộng điểm</span>
+              <% } else { %>
+                <span class="badge badge-danger"><span class="badge-dot"></span> Trừ điểm</span>
+              <% } %>
+            </td>
+            <td class="num" style="font-weight:700; color:<%= dt.Loai === 'Cong' ? 'var(--success-text)' : 'var(--danger-text)' %>;">
+              <%= dt.Loai === 'Cong' ? '+' : '-' %><%= Number(dt.SoDiem).toLocaleString('vi-VN') %>
+            </td>
+            <td class="num"><%= Number(dt.DiemTruoc || 0).toLocaleString('vi-VN') %></td>
+            <td class="num" style="font-weight:600;"><%= Number(dt.DiemSau || 0).toLocaleString('vi-VN') %></td>
+            <td style="color:var(--slate-700);"><%= dt.LyDo %></td>
+            <td><%= dt.NgayTao %></td>
+            <td class="actions" style="justify-content:center;">
+              <form class="form-confirm-delete"
+                    data-confirm="Xác nhận xóa bản ghi biến động điểm <%= dt._id %>? Hệ thống sẽ hoàn tác <%= dt.SoDiem %> điểm cho khách hàng <%= dt.MaKhachHang %>."
+                    method="POST" action="/diem-tich-luy/<%= dt._id %>/delete" style="margin:0;">
+                <button type="submit" class="btn btn-sm btn-danger" title="Xóa và hoàn tác điểm">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Hoàn tác</span>
+                </button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card" style="max-width:760px;">
+  <div class="page-header" style="margin-bottom:12px;">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Điều chỉnh điểm thủ công
+    </h3>
+  </div>
+  <p style="color:var(--text-muted); font-size:13px; margin-top:-6px; margin-bottom:18px;">
+    Hệ thống sẽ tự động cập nhật lại tổng điểm hiện tại và tự động nâng/hạ hạng thành viên tương ứng theo chính sách.
+  </p>
+  <form method="POST" action="/diem-tich-luy">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Khách hàng cần điều chỉnh *</label>
+        <select name="maKhachHang" required>
+          <option value="">-- Chọn khách hàng --</option>
+          <% dsKhachHang.forEach(function(kh) { %>
+            <option value="<%= kh._id %>"><%= kh._id %> - <%= kh.HoTen %> (Điểm hiện tại: <%= (kh.DiemHienTai || 0).toLocaleString('vi-VN') %>)</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Hình thức điều chỉnh</label>
+        <select name="loai">
+          <option value="Cong">Cộng điểm (+)</option>
+          <option value="Tru">Trừ điểm (-)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Số lượng điểm *</label>
+        <input type="number" name="soDiem" min="1" required placeholder="VD: 50">
+      </div>
+      <div class="form-group full">
+        <label>Lý do điều chỉnh *</label>
+        <input type="text" name="lyDo" required placeholder="VD: Bù điểm sự kiện sinh nhật khách hàng">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Ghi nhận điều chỉnh</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/layout-end') %>

@@ -1,0 +1,6 @@
+<% if (typeof flashSuccess !== 'undefined' && flashSuccess) { %>
+  <div class="alert alert-success" data-autohide><%= flashSuccess %></div>
+<% } %>
+<% if (typeof flashError !== 'undefined' && flashError) { %>
+  <div class="alert alert-error"><%= flashError %></div>
+<% } %>

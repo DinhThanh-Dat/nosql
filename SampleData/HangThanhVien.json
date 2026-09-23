@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "HTV001",
+        "TenHang": "Đồng",
+        "DiemToiThieu": 0,
+        "DiemToiDa": 999,
+        "TyLeUuDai": 0,
+        "MoTa": "Hạng thành viên cơ bản"
+    },
+    {
+        "_id": "HTV002",
+        "TenHang": "Bạc",
+        "DiemToiThieu": 1000,
+        "DiemToiDa": 2999,
+        "TyLeUuDai": 5,
+        "MoTa": "Khách hàng thân thiết hạng Bạc"
+    },
+    {
+        "_id": "HTV003",
+        "TenHang": "Vàng",
+        "DiemToiThieu": 3000,
+        "DiemToiDa": 5999,
+        "TyLeUuDai": 10,
+        "MoTa": "Khách hàng thân thiết hạng Vàng"
+    },
+    {
+        "_id": "HTV004",
+        "TenHang": "Kim cương",
+        "DiemToiThieu": 6000,
+        "DiemToiDa": null,
+        "TyLeUuDai": 15,
+        "MoTa": "Khách hàng VIP"
+    }
+]

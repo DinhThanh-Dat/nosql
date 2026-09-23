@@ -1,0 +1,422 @@
+[
+    {
+        "_id": "KH001",
+        "HoTen": "Nguyễn Văn An",
+        "GioiTinh": "Nam",
+        "NgaySinh": "2000-05-15",
+        "SoDienThoai": "0901234567",
+        "Email": "an.nguyen@gmail.com",
+        "DiaChi": {
+            "SoNha": "11",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 5",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 4250,
+        "NgayDangKy": "2025-01-10",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH002",
+        "HoTen": "Trần Thị Bình",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "1999-08-22",
+        "SoDienThoai": "0902345678",
+        "Email": "binh.tran@gmail.com",
+        "DiaChi": {
+            "SoNha": "12",
+            "Duong": "Lê Lợi",
+            "Quan": "Quận 3",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV004",
+            "TenHang": "Kim cương"
+        },
+        "DiemHienTai": 7350,
+        "NgayDangKy": "2024-11-20",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH003",
+        "HoTen": "Lê Hoàng Nam",
+        "GioiTinh": "Nam",
+        "NgaySinh": "2001-02-10",
+        "SoDienThoai": "0903456789",
+        "Email": "nam.le@gmail.com",
+        "DiaChi": {
+            "SoNha": "13",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 10",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV002",
+            "TenHang": "Bạc"
+        },
+        "DiemHienTai": 1850,
+        "NgayDangKy": "2025-03-15",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH004",
+        "HoTen": "Phạm Ngọc Mai",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2002-11-03",
+        "SoDienThoai": "0904567890",
+        "Email": "mai.pham@gmail.com",
+        "DiaChi": {
+            "SoNha": "14",
+            "Duong": "Lê Lợi",
+            "Quan": "Quận 1",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 3650,
+        "NgayDangKy": "2025-02-05",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH005",
+        "HoTen": "Võ Minh Khang",
+        "GioiTinh": "Nam",
+        "NgaySinh": "1998-06-18",
+        "SoDienThoai": "0905678901",
+        "Email": "khang.vo@gmail.com",
+        "DiaChi": {
+            "SoNha": "15",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Bình Thạnh",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV004",
+            "TenHang": "Kim cương"
+        },
+        "DiemHienTai": 8200,
+        "NgayDangKy": "2024-09-12",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH006",
+        "HoTen": "Đặng Thùy Linh",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2001-09-25",
+        "SoDienThoai": "0906789012",
+        "Email": "linh.dang@gmail.com",
+        "DiaChi": {
+            "SoNha": "16",
+            "Duong": "Lê Lợi",
+            "Quan": "Gò Vấp",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV002",
+            "TenHang": "Bạc"
+        },
+        "DiemHienTai": 2400,
+        "NgayDangKy": "2025-04-01",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH007",
+        "HoTen": "Bùi Quốc Huy",
+        "GioiTinh": "Nam",
+        "NgaySinh": "2000-12-12",
+        "SoDienThoai": "0907890123",
+        "Email": "huy.bui@gmail.com",
+        "DiaChi": {
+            "SoNha": "17",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Tân Bình",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV001",
+            "TenHang": "Đồng"
+        },
+        "DiemHienTai": 650,
+        "NgayDangKy": "2026-01-15",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH008",
+        "HoTen": "Nguyễn Thảo Vy",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2003-04-08",
+        "SoDienThoai": "0908901234",
+        "Email": "vy.nguyen@gmail.com",
+        "DiaChi": {
+            "SoNha": "18",
+            "Duong": "Lê Lợi",
+            "Quan": "Phú Nhuận",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 5100,
+        "NgayDangKy": "2024-12-10",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH009",
+        "HoTen": "Trương Gia Hân",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "1997-07-30",
+        "SoDienThoai": "0909012345",
+        "Email": "han.truong@gmail.com",
+        "DiaChi": {
+            "SoNha": "19",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 7",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV004",
+            "TenHang": "Kim cương"
+        },
+        "DiemHienTai": 9100,
+        "NgayDangKy": "2024-07-18",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH010",
+        "HoTen": "Hồ Đức Anh",
+        "GioiTinh": "Nam",
+        "NgaySinh": "1999-01-20",
+        "SoDienThoai": "0910123456",
+        "Email": "anh.ho@gmail.com",
+        "DiaChi": {
+            "SoNha": "20",
+            "Duong": "Lê Lợi",
+            "Quan": "Thủ Đức",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV002",
+            "TenHang": "Bạc"
+        },
+        "DiemHienTai": 1450,
+        "NgayDangKy": "2025-05-20",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH011",
+        "HoTen": "Phan Minh Tuấn",
+        "GioiTinh": "Nam",
+        "NgaySinh": "2002-03-14",
+        "SoDienThoai": "0911234567",
+        "Email": "tuan.phan@gmail.com",
+        "DiaChi": {
+            "SoNha": "21",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 6",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV001",
+            "TenHang": "Đồng"
+        },
+        "DiemHienTai": 780,
+        "NgayDangKy": "2026-02-12",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH012",
+        "HoTen": "Mai Khánh Ngọc",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2000-10-05",
+        "SoDienThoai": "0912345678",
+        "Email": "ngoc.mai@gmail.com",
+        "DiaChi": {
+            "SoNha": "22",
+            "Duong": "Lê Lợi",
+            "Quan": "Quận 4",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 3950,
+        "NgayDangKy": "2025-01-25",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH013",
+        "HoTen": "Nguyễn Nhật Minh",
+        "GioiTinh": "Nam",
+        "NgaySinh": "1998-12-28",
+        "SoDienThoai": "0913456789",
+        "Email": "minh.nguyen@gmail.com",
+        "DiaChi": {
+            "SoNha": "23",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Tân Phú",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV004",
+            "TenHang": "Kim cương"
+        },
+        "DiemHienTai": 6800,
+        "NgayDangKy": "2024-10-05",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH014",
+        "HoTen": "Lý Ngọc Trâm",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2001-06-09",
+        "SoDienThoai": "0914567890",
+        "Email": "tram.ly@gmail.com",
+        "DiaChi": {
+            "SoNha": "24",
+            "Duong": "Lê Lợi",
+            "Quan": "Bình Tân",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV002",
+            "TenHang": "Bạc"
+        },
+        "DiemHienTai": 2150,
+        "NgayDangKy": "2025-06-01",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH015",
+        "HoTen": "Đỗ Thành Đạt",
+        "GioiTinh": "Nam",
+        "NgaySinh": "1997-09-17",
+        "SoDienThoai": "0915678901",
+        "Email": "dat.do@gmail.com",
+        "DiaChi": {
+            "SoNha": "25",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 8",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 4750,
+        "NgayDangKy": "2025-02-28",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH016",
+        "HoTen": "Huỳnh Kim Chi",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2003-01-11",
+        "SoDienThoai": "0916789012",
+        "Email": "chi.huynh@gmail.com",
+        "DiaChi": {
+            "SoNha": "26",
+            "Duong": "Lê Lợi",
+            "Quan": "Quận 11",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV001",
+            "TenHang": "Đồng"
+        },
+        "DiemHienTai": 450,
+        "NgayDangKy": "2026-03-05",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH017",
+        "HoTen": "Vũ Anh Duy",
+        "GioiTinh": "Nam",
+        "NgaySinh": "1996-05-27",
+        "SoDienThoai": "0917890123",
+        "Email": "duy.vu@gmail.com",
+        "DiaChi": {
+            "SoNha": "27",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Quận 12",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV004",
+            "TenHang": "Kim cương"
+        },
+        "DiemHienTai": 7600,
+        "NgayDangKy": "2024-08-25",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH018",
+        "HoTen": "Tạ Mỹ Duyên",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "2002-08-16",
+        "SoDienThoai": "0918901234",
+        "Email": "duyen.ta@gmail.com",
+        "DiaChi": {
+            "SoNha": "28",
+            "Duong": "Lê Lợi",
+            "Quan": "Bình Thạnh",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV002",
+            "TenHang": "Bạc"
+        },
+        "DiemHienTai": 2750,
+        "NgayDangKy": "2025-07-10",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH019",
+        "HoTen": "Ngô Minh Khôi",
+        "GioiTinh": "Nam",
+        "NgaySinh": "2000-02-02",
+        "SoDienThoai": "0919012345",
+        "Email": "khoi.ngo@gmail.com",
+        "DiaChi": {
+            "SoNha": "29",
+            "Duong": "Nguyễn Trãi",
+            "Quan": "Gò Vấp",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV003",
+            "TenHang": "Vàng"
+        },
+        "DiemHienTai": 3350,
+        "NgayDangKy": "2025-03-20",
+        "TrangThai": "HoatDong"
+    },
+    {
+        "_id": "KH020",
+        "HoTen": "Cao Thanh Hà",
+        "GioiTinh": "Nữ",
+        "NgaySinh": "1999-11-29",
+        "SoDienThoai": "0920123456",
+        "Email": "ha.cao@gmail.com",
+        "DiaChi": {
+            "SoNha": "30",
+            "Duong": "Lê Lợi",
+            "Quan": "Quận 1",
+            "ThanhPho": "TP.HCM"
+        },
+        "HangThanhVien": {
+            "MaHang": "HTV001",
+            "TenHang": "Đồng"
+        },
+        "DiemHienTai": 900,
+        "NgayDangKy": "2026-01-28",
+        "TrangThai": "HoatDong"
+    }
+]
