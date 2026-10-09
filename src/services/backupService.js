@@ -26,17 +26,29 @@ function chayLenh(filePath, args) {
   });
 }
 
+function resolveToolPath(toolName, envVar) {
+  const envVal = process.env[envVar];
+  if (envVal && envVal !== toolName && fs.existsSync(envVal)) {
+    return envVal;
+  }
+  const defaultWinPath = `C:\\Program Files\\MongoDB\\Tools\\100\\bin\\${toolName}.exe`;
+  if (fs.existsSync(defaultWinPath)) {
+    return defaultWinPath;
+  }
+  return envVal || toolName;
+}
+
 async function chayMongoDump(thuMucDich) {
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
   const dbName = process.env.MONGODB_DBNAME || 'QLKhachHangThanThiet';
-  const dumpPath = process.env.MONGODUMP_PATH || 'mongodump';
+  const dumpPath = resolveToolPath('mongodump', 'MONGODUMP_PATH');
   return chayLenh(dumpPath, [`--uri=${uri}`, `--db=${dbName}`, `--out=${thuMucDich}`]);
 }
 
 async function chayMongoRestore(thuMucNguon) {
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
   const dbName = process.env.MONGODB_DBNAME || 'QLKhachHangThanThiet';
-  const restorePath = process.env.MONGORESTORE_PATH || 'mongorestore';
+  const restorePath = resolveToolPath('mongorestore', 'MONGORESTORE_PATH');
   return chayLenh(restorePath, [`--uri=${uri}`, `--nsInclude=${dbName}.*`, '--drop', thuMucNguon]);
 }
 

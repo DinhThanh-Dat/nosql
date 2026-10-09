@@ -1,187 +1,276 @@
 <%- include('partials/layout-start', { title }) %>
 
-<!-- Grid Thẻ Chỉ Số KPI (Hiện đại, tối giản, thanh lịch) -->
-<div class="stat-grid">
-  <!-- Thẻ 1: Doanh thu -->
-  <div class="stat-card">
-    <div class="stat-header">
-      <span class="stat-label">Tổng doanh thu tích lũy</span>
-      <div class="stat-icon-wrapper stat-icon-indigo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  <!-- Grid Thẻ Chỉ Số KPI (Hiện đại, tối giản, thanh lịch) -->
+  <div class="stat-grid">
+    <!-- Thẻ 1: Doanh thu -->
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-label">Tổng doanh thu tích lũy</span>
+        <div class="stat-icon-wrapper stat-icon-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">
+        <%= Number(tongDoanhThu || 0).toLocaleString('vi-VN') %> <span
+            style="font-size:16px; font-weight:600; color:var(--slate-500);">đ</span>
+      </div>
+      <div class="stat-meta">
+        <span class="stat-tag"><span class="badge-dot" style="background:var(--success);"></span> Hoàn tất</span>
+        <span>Giao dịch thành công</span>
       </div>
     </div>
-    <div class="stat-value"><%= Number(tongDoanhThu || 0).toLocaleString('vi-VN') %> <span style="font-size:16px; font-weight:600; color:var(--slate-500);">đ</span></div>
-    <div class="stat-meta">
-      <span class="stat-tag"><span class="badge-dot" style="background:var(--success);"></span> Hoàn tất</span>
-      <span>Giao dịch thành công</span>
-    </div>
-  </div>
 
-  <!-- Thẻ 2: Khách hàng -->
-  <div class="stat-card">
-    <div class="stat-header">
-      <span class="stat-label">Tổng khách hàng đăng ký</span>
-      <div class="stat-icon-wrapper stat-icon-emerald">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <!-- Thẻ 2: Khách hàng -->
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-label">Tổng khách hàng đăng ký</span>
+        <div class="stat-icon-wrapper stat-icon-emerald">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">
+        <%= tongKhachHang %> <span style="font-size:16px; font-weight:600; color:var(--slate-500);">thành viên</span>
+      </div>
+      <div class="stat-meta">
+        <span class="stat-tag">Active</span>
+        <span>Thành viên trong hệ thống</span>
       </div>
     </div>
-    <div class="stat-value"><%= tongKhachHang %> <span style="font-size:16px; font-weight:600; color:var(--slate-500);">thành viên</span></div>
-    <div class="stat-meta">
-      <span class="stat-tag">Active</span>
-      <span>Thành viên trong hệ thống</span>
-    </div>
-  </div>
 
-  <!-- Thẻ 3: Hạng thành viên -->
-  <div class="stat-card">
-    <div class="stat-header">
-      <span class="stat-label">Hạng có thành viên</span>
-      <div class="stat-icon-wrapper stat-icon-amber">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+    <!-- Thẻ 3: Hạng thành viên -->
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-label">Hạng có thành viên</span>
+        <div class="stat-icon-wrapper stat-icon-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">
+        <%= phanBoHang.length %> <span style="font-size:16px; font-weight:600; color:var(--slate-500);">cấp bậc</span>
+      </div>
+      <div class="stat-meta">
+        <span class="stat-tag">Phân cấp</span>
+        <span>Tier thành viên có khách</span>
       </div>
     </div>
-    <div class="stat-value"><%= phanBoHang.length %> <span style="font-size:16px; font-weight:600; color:var(--slate-500);">cấp bậc</span></div>
-    <div class="stat-meta">
-      <span class="stat-tag">Phân cấp</span>
-      <span>Tier thành viên có khách</span>
-    </div>
-  </div>
 
-  <!-- Thẻ 4: Ưu đãi hot nhất -->
-  <div class="stat-card">
-    <div class="stat-header">
-      <span class="stat-label">Ưu đãi đổi nhiều nhất</span>
-      <div class="stat-icon-wrapper stat-icon-purple">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/></svg>
+    <!-- Thẻ 4: Ưu đãi hot nhất -->
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-label">Ưu đãi đổi nhiều nhất</span>
+        <div class="stat-icon-wrapper stat-icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="8" width="18" height="13" rx="2" />
+            <path d="M16 8V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3" />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value"
+        style="font-size:18px; line-height:1.3; min-height:36px; display:flex; align-items:center;">
+        <%= topUuDai.length> 0 ? topUuDai[0].TenUuDai : 'Chưa có dữ liệu' %>
+      </div>
+      <div class="stat-meta">
+        <span class="stat-tag" style="background:#f5f3ff; color:#7c3aed;">Top 1 Reward</span>
+        <span>
+          <%= topUuDai.length> 0 ? topUuDai[0].SoLanSuDung + ' lượt dùng' : '0 lượt' %>
+        </span>
       </div>
     </div>
-    <div class="stat-value" style="font-size:18px; line-height:1.3; min-height:36px; display:flex; align-items:center;">
-      <%= topUuDai.length > 0 ? topUuDai[0].TenUuDai : 'Chưa có dữ liệu' %>
-    </div>
-    <div class="stat-meta">
-      <span class="stat-tag" style="background:#f5f3ff; color:#7c3aed;">Top 1 Reward</span>
-      <span><%= topUuDai.length > 0 ? topUuDai[0].SoLanSuDung + ' lượt dùng' : '0 lượt' %></span>
-    </div>
   </div>
-</div>
 
-<!-- Bảng Doanh thu theo tháng -->
-<div class="card">
-  <div class="page-header" style="margin-bottom:14px;">
-    <h3>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Doanh thu theo tháng
-    </h3>
-    <span class="badge badge-blue">Câu 15 (Aggregation)</span>
-  </div>
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Kỳ báo cáo (Tháng)</th><th style="text-align:right;">Doanh thu đạt được</th><th style="text-align:right;">Số lượng giao dịch</th></tr></thead>
-      <tbody>
-        <% if (doanhThuThang.length === 0) { %>
-          <tr class="empty-row"><td colspan="3">Chưa có dữ liệu giao dịch hoàn tất trong hệ thống.</td></tr>
-        <% } %>
-        <% doanhThuThang.forEach(function(row) { %>
-          <tr>
-            <td><strong><%= row._id %></strong></td>
-            <td class="num" style="color:var(--primary-700); font-weight:700;"><%= Number(row.DoanhThu).toLocaleString('vi-VN') %> đ</td>
-            <td class="num"><%= row.SoGiaoDich %> đơn</td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- Top 5 khách hàng chi tiêu -->
-<div class="card">
-  <div class="page-header" style="margin-bottom:14px;">
-    <h3>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      Top 5 khách hàng chi tiêu cao nhất
-    </h3>
-    <span class="badge badge-blue">Câu 9 (Lookup + Sort)</span>
-  </div>
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Mã KH</th><th>Họ và tên khách hàng</th><th style="text-align:right;">Tổng chi tiêu</th><th style="text-align:right;">Số đơn hàng</th></tr></thead>
-      <tbody>
-        <% if (topKhachHang.length === 0) { %>
-          <tr class="empty-row"><td colspan="4">Chưa có dữ liệu khách hàng giao dịch.</td></tr>
-        <% } %>
-        <% topKhachHang.forEach(function(row, idx) { %>
-          <tr>
-            <td><span class="badge badge-gray"><%= row.MaKhachHang %></span></td>
-            <td>
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:<%= idx === 0 ? '#fef3c7' : '#f1f5f9' %>; color:<%= idx === 0 ? '#b45309' : '#64748b' %>; font-size:11px; font-weight:700;"><%= idx + 1 %></span>
-                <strong><%= row.HoTen %></strong>
-              </div>
-            </td>
-            <td class="num" style="color:var(--success-text); font-weight:700;"><%= Number(row.TongChiTieu).toLocaleString('vi-VN') %> đ</td>
-            <td class="num"><%= row.SoGiaoDich %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- 2 Cột bên dưới: Phân bố hạng & Top ưu đãi -->
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:24px;">
+  <!-- Bảng Doanh thu theo tháng -->
   <div class="card">
     <div class="page-header" style="margin-bottom:14px;">
       <h3>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-        Phân bố khách theo hạng
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        Doanh thu theo tháng
       </h3>
-      <span class="badge badge-blue">Câu 12</span>
     </div>
     <div class="table-wrap">
       <table class="data-table">
-        <thead><tr><th>Hạng thành viên</th><th style="text-align:right;">Số khách hàng</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Kỳ báo cáo (Tháng)</th>
+            <th style="text-align:right;">Doanh thu đạt được</th>
+            <th style="text-align:right;">Số lượng giao dịch</th>
+          </tr>
+        </thead>
         <tbody>
-          <% if (phanBoHang.length === 0) { %>
-            <tr class="empty-row"><td colspan="2">Chưa có phân bố hạng.</td></tr>
-          <% } %>
-          <% phanBoHang.forEach(function(row) { %>
-            <tr>
-              <td>
-                <span class="badge badge-blue" style="font-weight:700;"><%= row.TenHang || row._id %></span>
-              </td>
-              <td class="num" style="font-weight:700;"><%= row.SoLuongKhachHang %> thành viên</td>
+          <% if (doanhThuThang.length===0) { %>
+            <tr class="empty-row">
+              <td colspan="3">Chưa có dữ liệu giao dịch hoàn tất trong hệ thống.</td>
             </tr>
-          <% }) %>
+            <% } %>
+              <% doanhThuThang.forEach(function(row) { %>
+                <tr>
+                  <td><strong>
+                      <%= row._id %>
+                    </strong></td>
+                  <td class="num" style="color:var(--primary-700); font-weight:700;">
+                    <%= Number(row.DoanhThu).toLocaleString('vi-VN') %> đ
+                  </td>
+                  <td class="num">
+                    <%= row.SoGiaoDich %> đơn
+                  </td>
+                </tr>
+                <% }) %>
         </tbody>
       </table>
     </div>
   </div>
 
+  <!-- Top 5 khách hàng chi tiêu -->
   <div class="card">
     <div class="page-header" style="margin-bottom:14px;">
       <h3>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-        Ưu đãi được sử dụng nhiều nhất
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        Top 5 khách hàng chi tiêu cao nhất
       </h3>
-      <span class="badge badge-blue">Câu 14</span>
     </div>
     <div class="table-wrap">
       <table class="data-table">
-        <thead><tr><th>Tên gói ưu đãi</th><th style="text-align:right;">Lượt quy đổi</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Mã KH</th>
+            <th>Họ và tên khách hàng</th>
+            <th style="text-align:right;">Tổng chi tiêu</th>
+            <th style="text-align:right;">Số đơn hàng</th>
+          </tr>
+        </thead>
         <tbody>
-          <% if (topUuDai.length === 0) { %>
-            <tr class="empty-row"><td colspan="2">Chưa có lượt sử dụng ưu đãi.</td></tr>
-          <% } %>
-          <% topUuDai.forEach(function(row) { %>
-            <tr>
-              <td><strong><%= row.TenUuDai %></strong></td>
-              <td class="num" style="color:var(--primary-600); font-weight:700;"><%= row.SoLanSuDung %> lượt</td>
+          <% if (topKhachHang.length===0) { %>
+            <tr class="empty-row">
+              <td colspan="4">Chưa có dữ liệu khách hàng giao dịch.</td>
             </tr>
-          <% }) %>
+            <% } %>
+              <% topKhachHang.forEach(function(row, idx) { %>
+                <tr>
+                  <td><span class="badge badge-gray">
+                      <%= row.MaKhachHang %>
+                    </span></td>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="rank-badge <%= idx === 0 ? 'top-1' : '' %>">
+                        <%= idx + 1 %>
+                      </span>
+                      <strong>
+                        <%= row.HoTen %>
+                      </strong>
+                    </div>
+                  </td>
+                  <td class="num" style="color:var(--success-text); font-weight:700;">
+                    <%= Number(row.TongChiTieu).toLocaleString('vi-VN') %> đ
+                  </td>
+                  <td class="num">
+                    <%= row.SoGiaoDich %>
+                  </td>
+                </tr>
+                <% }) %>
         </tbody>
       </table>
     </div>
   </div>
-</div>
 
-<%- include('partials/layout-end') %>
+  <!-- 2 Cột bên dưới: Phân bố hạng & Top ưu đãi -->
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:24px;">
+    <div class="card">
+      <div class="page-header" style="margin-bottom:14px;">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+            <path d="M22 12A10 10 0 0 0 12 2v10z" />
+          </svg>
+          Phân bố khách theo hạng
+        </h3>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Hạng thành viên</th>
+              <th style="text-align:right;">Số khách hàng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (phanBoHang.length===0) { %>
+              <tr class="empty-row">
+                <td colspan="2">Chưa có phân bố hạng.</td>
+              </tr>
+              <% } %>
+                <% phanBoHang.forEach(function(row) { %>
+                  <tr>
+                    <td>
+                      <span class="badge badge-blue" style="font-weight:700;">
+                        <%= row.TenHang || row._id %>
+                      </span>
+                    </td>
+                    <td class="num" style="font-weight:700;">
+                      <%= row.SoLuongKhachHang %> thành viên
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="page-header" style="margin-bottom:14px;">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-600)" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 14 14" />
+          </svg>
+          Ưu đãi được sử dụng nhiều nhất
+        </h3>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tên gói ưu đãi</th>
+              <th style="text-align:right;">Lượt quy đổi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (topUuDai.length===0) { %>
+              <tr class="empty-row">
+                <td colspan="2">Chưa có lượt sử dụng ưu đãi.</td>
+              </tr>
+              <% } %>
+                <% topUuDai.forEach(function(row) { %>
+                  <tr>
+                    <td><strong>
+                        <%= row.TenUuDai %>
+                      </strong></td>
+                    <td class="num" style="color:var(--primary-600); font-weight:700;">
+                      <%= row.SoLanSuDung %> lượt
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/layout-end') %>
